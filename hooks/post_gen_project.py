@@ -15,11 +15,11 @@ os.system("pushd Source && dotnet restore && popd")
 # create repository on fluffy-mods
 os.system("rw-release init \"{{cookiecutter.mod_name.replace(' ', '')}}\" \"{{cookiecutter.short_desc}}\"")
 
-# create release branch for mod version
-os.system("rw-release create {{cookiecutter.mod_ver}}")
-
 # update/create generated files
 os.system("mod update")
+
+# create release branch for mod version
+os.system("rw-release create {{cookiecutter.mod_ver}}")
 
 # set upstream and use branch as default
 os.system("rw-release use {{cookiecutter.mod_ver}}")
