@@ -1,0 +1,10 @@
+{
+  "name": "{{cookiecutter.mod_name}}",
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "build": 0
+  },
+  "visibility": 0,
+  "packageId": "{{cookiecutter.author|lower}}.{{cookiecutter.mod_name|lower}}"
+}

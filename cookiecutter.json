@@ -1,73 +1,11 @@
 {
-  "mod_name": "Example Mod",
-  "author": "MySteamUsername",
-  "mod_ver": ["1.0", "1.1"],
+  "mod_name": "New Mod",
+  "short_desc": "one line description",
+  "author": "Fluffy",
+  "mod_ver": "1.1",
   "create_empty_definitions": "n",
   "harmony": "y",
   "settings": "n",
   "debugLog": "y",
-
-  "_visual_studio": {
-    "mod_name": {
-      "label": "Mod name",
-      "description": "The name of your mod (cannot easily change later)"
-    },
-    "author": {
-      "label": "Author",
-      "description": "Use your Steam username for automatic linking of mod to profile"
-    },
-    "mod_ver": {
-      "label": "Mod Version",
-      "description": "The version of Rimworld this mod is for (default:1.1)"
-    },
-    "create_empty_definitions": {
-      "label": "Create blank XML definition files",
-      "description": "Create empty files as templates for your definitions",
-      "selector": "yesno"
-    },
-    "harmony": {
-      "label": "Include Harmony library",
-      "description": "A useful library to safely patch game code. Include it here, unless your mod will depend on HugsLib, or doesn't need to patch.",
-      "selector": "yesno"
-    },
-    "settings": {
-      "label": "Mod Settings",
-      "description": "Include extra code and files to use built-in Mod Settings",
-      "selector": "yesno"
-    },
-    "debugLog": {
-      "label": "Log.Message Debug only",
-      "description": "This mod defines its own Log.Message, so Logging uses that instead of Verse.Log.Message. This method is disabled in release builds, so you can keep Log.Message in code, and it never spams users",
-      "selector": "yesno"
-    }
-  },
-
-  "_visual_studio_post_cmds": [
-    {
-      "name": "Tools.Shell",
-      "args": [
-        "MsBuild.exe",
-        "{{cookiecutter._output_folder_path}}\\{{cookiecutter.mod_name}}.sln",
-        "/t:Build",
-        "/p:Configuration=Release",
-        "/verbosity:minimal"
-      ]
-    },
-    {
-      "name": "Tools.Shell",
-      "args": [
-        "MsBuild.exe",
-        "{{cookiecutter._output_folder_path}}\\{{cookiecutter.mod_name}}.sln",
-        "/t:Build",
-        "/p:Configuration=Debug",
-        "/verbosity:minimal"
-      ]
-    },
-    {
-      "name": "File.OpenProject",
-      "args": [
-        "{{cookiecutter._output_folder_path}}\\{{cookiecutter.mod_name}}.sln"
-      ]
-    }
-  ]
+  "version_control": "n"
 }
