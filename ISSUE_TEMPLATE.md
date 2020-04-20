@@ -1,5 +1,0 @@
-## Problem
-
-## Do This
-
-## Background

@@ -4,7 +4,7 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 
-namespace {{cookiecutter.mod_name.replace(' ', '_')}}
+namespace {{cookiecutter.mod_name.replace(' ', '')}}
 {
 	class Settings : ModSettings
 	{
@@ -13,7 +13,7 @@ namespace {{cookiecutter.mod_name.replace(' ', '_')}}
 
 		public static Settings Get()
 		{
-			return LoadedModManager.GetMod<{{cookiecutter.mod_name.replace(' ', '_')}}.Mod>().GetSettings<Settings>();
+			return LoadedModManager.GetMod<{{cookiecutter.mod_name.replace(' ', '')}}.Mod>().GetSettings<Settings>();
 		}
 
 		public void DoWindowContents(Rect wrect)
