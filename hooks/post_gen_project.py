@@ -5,10 +5,6 @@ os.makedirs("/Defs", exist_ok=True)
 os.makedirs("/Languages", exist_ok=True)
 os.makedirs("/Textures", exist_ok=True)
 
-{% if(cookiecutter.harmony != 'n') %}
-os.system("pushd Source && dotnet restore && popd")
-{% endif %}
-
 {% if(cookiecutter.version_control != 'n') %}
 
 # stuff specifically for my release script(s);

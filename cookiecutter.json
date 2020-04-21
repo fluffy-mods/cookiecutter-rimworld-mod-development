@@ -5,7 +5,8 @@
   "mod_ver": "1.1",
   "create_empty_definitions": "n",
   "harmony": "y",
-  "settings": "n",
+  "settings": "y",
   "debugLog": "y",
+  "I18n": "y",
   "version_control": "n"
 }
