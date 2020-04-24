@@ -5,7 +5,7 @@
     "minor": 0,
     "build": 0
   },
-  "git_user": "{{cookiecutter.author == 'Fluffy' ? 'fluffy-mods' : cookiecutter.author}}",
+  "git_user": "{% if cookiecutter.author == 'Fluffy' %}fluffy-mods{% else %}{{cookiecutter.author}}{% endif %}",
   "git_repo": "{{cookiecutter.mod_name.replace(' ', '')}}",
   "visibility": 0,
   "packageId": "{{cookiecutter.author|lower}}.{{cookiecutter.mod_name|lower}}"
