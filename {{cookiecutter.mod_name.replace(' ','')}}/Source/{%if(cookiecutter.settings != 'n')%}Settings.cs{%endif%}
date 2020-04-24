@@ -8,28 +8,15 @@ namespace {{cookiecutter.mod_name.replace(' ', '')}}
 {
 	class Settings : ModSettings
 	{
-		//Use Settings.Get().settings to refer to this setting.
-		public bool setting;
-
-		public static Settings Get()
-		{
-			return LoadedModManager.GetMod<{{cookiecutter.mod_name.replace(' ', '')}}.Mod>().GetSettings<Settings>();
-		}
-
-		public void DoWindowContents(Rect wrect)
+		public void DoWindowContents(Rect canvas)
 		{
 			var options = new Listing_Standard();
-			options.Begin(wrect);
-			
-			options.CheckboxLabeled("Sample setting", ref setting);
-			options.Gap();
-
+			options.Begin(canvas);
 			options.End();
 		}
 		
 		public override void ExposeData()
 		{
-			Scribe_Values.Look(ref setting, "setting", true);
 		}
 	}
 }

@@ -9,18 +9,20 @@ namespace {{cookiecutter.mod_name.replace(' ', '')}}
 {
 	public class Mod : Verse.Mod
 	{
+		public static Settings Settings { get; private set; }
 		public Mod(ModContentPack content) : base(content)
 		{
 {%if(cookiecutter.settings != 'n')%}			// initialize settings
-			GetSettings<Settings>();
-
-{%endif%}{%if(cookiecutter.harmony != 'n')%}
+			Settings = GetSettings<Settings>();
+{%endif%}
+{%if(cookiecutter.harmony != 'n')%}
 #if DEBUG
 			Harmony.DEBUG = true;
 #endif
 			Harmony harmony = new Harmony("{{cookiecutter.author}}.{{cookiecutter.mod_name.replace(' ', '')}}");
 			harmony.PatchAll();
-{%endif%}		}
+{%endif%}
+		}
 {%if(cookiecutter.settings != 'n')%}
 		public override void DoSettingsWindowContents(Rect inRect)
 		{
@@ -32,5 +34,6 @@ namespace {{cookiecutter.mod_name.replace(' ', '')}}
 		{
 			return "{{cookiecutter.mod_name}}";
 		}
-{% endif %}	}
+{% endif %}
+	}
 }
